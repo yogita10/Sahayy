@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Self created CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="../Sahay_Frontend/CSS/styles.css" /> -->
+  <!-- Self created CSS-->
+  <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  <title>Document</title>
+</head>
+<body>
+  <!--Navbar-->
+  <nav
+  class="navbar navbar-expand-lg navbar-light nav-pills justify-content-end"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"
+      ><img src="assests/logo1.png" alt="Sahay logo" width="100px"
+    /></a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <nav>
+        <ul>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="index.html">Donate</a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="https://peaceful-fjord-52034.herokuapp.com/1234">Consultation</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</nav>
+<!--Navbar ends here-->
+
+
+<!-- <h1 class="mt-4">Dashboard</h1> -->
+<p class="lead mb-3">Welcome <%= user.name %></p> 
+<!-- <a href="/users/logout" class="btn btn-secondary">Logout</a> -->
+  <br>
+  <br>
+
+
+
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="ic:outline-masks"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <!-- <a
+    href=" https://fathomless-depths-76220.herokuapp.com/"
+    class=" card-title "
+    >Safety Health Equipments(Masks,Gloves,PPE Kits,Face Shields)</a
+  > -->
+  <a
+  
+  class=" card-title "
+  >Safety Health Equipments</a
+  >
+ 
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+<p id="text_from_script" style="text-align: center; font-size:20px;"></p>
+  <script>
+   
+    let name = '<%-user.donate%>' 
+    let type = '<%-user.text%>'
+    let quant = 30
+    let heading = document
+            .getElementById('text_from_script');
+    if(name === 'mask' || name === 'sanitizer' ){ 
+      if(type === 'donor'){  
+        quant = quant + parseInt('<%=user.quantity%>')
+      }else{
+        quant = quant - parseInt('<%=user.quantity%>')
+      }
+    }
+    heading.innerText = quant;
+      
+</script>
+
+</div>
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="healthicons:medicines-outline"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <a
+   
+    class=" card-title "
+    >Essential Medicines</a
+  >
+  
+  <!-- <p class="lead mb-3 number">Quantity <%= user.quantity %></p>  -->
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+  <p id="text_from_script1" style="text-align: center; font-size:20px;"></p>
+  <script>
+   
+    let name1 = '<%-user.donate%>'
+    let type1 = '<%-user.text%>'
+    let quant1 = 212
+    let heading1 = document
+            .getElementById('text_from_script1');
+    if(name1 === 'medicine' ){
+
+     if(type1 === 'donor'){  
+        quant1 = quant1 + parseInt('<%=user.quantity%>')
+      }else{
+        quant1 = quant1 - parseInt('<%=user.quantity%>')
+      }
+    }
+    heading1.innerText = quant1;
+      
+</script>
+</div>
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="mdi:food-variant"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <a
+    class=" card-title "
+    >Food Supplies</a
+  >
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+  <p id="text_from_script2" style="text-align: center; font-size:20px;"></p>
+  <script>
+   
+    let name2 = '<%-user.donate%>'
+    let type2 = '<%-user.text%>'
+    let quant2 = 5624
+    let heading2 = document
+            .getElementById('text_from_script2');
+    if(name2 === 'food' ){
+        if(type2 === 'donor'){  
+            quant2 = quant2 + parseInt('<%=user.quantity%>')
+          }else{
+            quant2 = quant2 - parseInt('<%=user.quantity%>')
+          }
+    }
+    heading2.innerText = quant2;
+      
+</script>
+</div>
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="fluent:people-money-20-regular"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <a
+    
+    class=" card-title "
+    >Monetary Funds</a
+  >
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+  <p id="text_from_script3" style="text-align: center; font-size:20px;" ></p>
+  <script>
+   
+    let name3 = '<%-user.donate%>'
+    let type3 = '<%-user.text%>'
+    let quant3 = 1005263
+    let heading3 = document
+            .getElementById('text_from_script3');
+    if(name3 === 'funds' ){
+        if(type3 === 'donor'){  
+            quant3 = quant3 + parseInt('<%=user.quantity%>')
+          }else{
+            quant3 = quant3 - parseInt('<%=user.quantity%>')
+          }
+    }
+    heading3.innerText = quant;
+      
+</script>
+</div>
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="mdi:gas-cylinder"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <!-- <a
+    href=" https://fathomless-depths-76220.herokuapp.com/"
+    class=" card-title "
+    >Oxygen Concentrators and Cylinders</a
+  > -->
+  <a
+    
+    class=" card-title "
+    >Oxygen Cylinders</a
+  >
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+  <p id="text_from_script4" style="text-align: center; font-size:20px;"></p>
+  <script>
+   
+    let name4 = '<%-user.donate%>'
+    let type4 = '<%-user.text%>'
+    let quant4 = 29
+    let heading4 = document
+            .getElementById('text_from_script4');
+    if(name4 === 'oxygen' ){
+        if(type4 === 'donor'){  
+            quant4 = quant4 + parseInt('<%=user.quantity%>')
+          }else{
+            quant4 = quant4 - parseInt('<%=user.quantity%>')
+          }
+    }
+    heading4.innerText = quant;
+      
+</script>
+</div>
+<div class="card dash_card" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon">
+    <i
+      class="iconify"
+      data-icon="healthicons:thermometer-digital-outline"
+
+      data-inline="false"
+    ></i>
+  </div>
+  <!-- <a
+    href=" https://fathomless-depths-76220.herokuapp.com/"
+    class=" card-title "
+    >Medical Devices (Thermometers, Oxymeters)</a
+  > -->
+  <a
+ 
+  class=" card-title "
+  >Medical Devices<a
+>
+  <!-- <p class="lead mb-3 number">Welcome <%= user.name %></p>    -->
+  <p id="text_from_script5" style="text-align: center; font-size:20px;"></p>
+  <script>
+   
+    let name5 = '<%-user.donate%>'
+    let type5 = '<%-user.text%>'
+    let quant5 = 98
+    let heading5 = document
+            .getElementById('text_from_script5');
+    if(name5 === 'medical' ){
+        if(type5 === 'donor'){  
+            quant5 = quant5 + parseInt('<%=user.quantity%>')
+          }else{
+            quant5 = quant5 - parseInt('<%=user.quantity%>')
+          }
+    }
+    heading5.innerText = quant;
+      
+</script>
+</div>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+</body>
+</html>
