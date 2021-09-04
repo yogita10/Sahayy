@@ -39,18 +39,6 @@
         </div>
 
         <div class="form-group">
-          <label for="text">Type of account</label>
-          <input
-            type="name"
-            id="text"
-            name="text"
-            class="form-control"
-            placeholder="beneficiary or donor"
-            value="<%= typeof text != 'undefined' ? text : '' %>"
-          />
-        </div>
-
-        <div class="form-group">
           <label for="text">Address</label>
           <input
             type="name"  
@@ -61,15 +49,48 @@
           />
         </div>
 
+
+        <div class="form-group">
+          <label for="text">Type of account</label>
+          <!-- <input
+            type="name"
+            id="text"
+            name="text"
+            class="form-control"
+            placeholder="beneficiary or donor"
+            value="<%= typeof text != 'undefined' ? text : '' %>"
+          /> -->
+
+          <select id="text" name="text">
+            <option value="Donor">Donor</option>
+            <option value="Beneficiary">Beneficiary</option>
+          </select>
+
+
+        </div>
+
+        
         <div class="form-group">
           <label for="text">What do you want to donate/require ? </label>
-          <input
+          <!-- <input
             type="name"  
             id="donate"
             name="donate"
             class="form-control"
             placeholder="Donate"
-          />
+          /> -->
+
+          <select id="donate" name="donate">
+            <option value="mask">mask</option>
+            <option value="sanitizer">sanitizer</option>
+            <option value="PPE">PPE Kit</option>
+            <option value="oxygen">oxygen</option>
+            <option value="food">food</option>
+            <option value="funds">funds</option>
+            <option value="medical">medical</option>
+          </select>
+
+          
         </div>
 
         <div class="form-group">
